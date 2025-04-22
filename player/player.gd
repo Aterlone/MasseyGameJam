@@ -12,7 +12,7 @@ var joy_y = 0 # -1 = down, 1 = up
 var button_jump = 0
 
 var jumping = false # is player jumping?
-var jump_position = Vector3.ZERO # records position player jumped from - used in cam script
+var jump_position = Vector2.ZERO # records position player jumped from - used in cam script
 var jumps = 0 # number of times jumped
 
 var impulse = Vector2.ZERO # used to apply a force alongside velocity such as wall jump
@@ -48,7 +48,6 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_cancel"): MAIN.end_level(); return
 	
-	if flag_pole: run_flag_pole(); return
 	
 	get_controls()
 	movement()
@@ -195,7 +194,6 @@ func movement():
 	movement_y()
 	
 	# keeps player from falling off
-	global_position.z = 0.0
 	# prevents getting stuck on gridmap collision shapes
 	max_slides = 200
 	
@@ -209,40 +207,6 @@ func die():
 		MAIN.LIVES = MAIN.BASE_LIVES
 	else:
 		MAIN.restart_level()
-
-
-func on_flag_pole(new_flag_pole_node):
-	"""Called by flag_pole when player is overlapping the pole collider"""
-	if !flag_pole:
-		flag_pole = true
-		flag_pole_node = new_flag_pole_node
-		global_position.x = flag_pole_node.global_position.x
-		global_position.z = flag_pole_node.global_position.z
-		$FlagPoleDelayT.start()
-
-
-func run_flag_pole():
-	"""Execute simple flag pole animation for exiting levels"""
-	var slide_speed = 0.1
-	var walk_speed = run_speed_max * 0.01
-	if !$FlagPoleDelayT.is_stopped(): return # pause for dramatic delay
-	
-	
-	if abs(global_position.y - flag_pole_node.global_position.y) < slide_speed * 2:
-		# at bottom of pole so lock y to pole base y
-		global_position.y = flag_pole_node.global_position.y
-	else:
-		# slide down pole
-		global_position.y -= slide_speed
-		return
-	
-	# walk off screen
-	global_position.x += walk_speed * get_physics_process_delta_time()
-	cam_locked = true
-	
-	if (global_position.x - flag_pole_node.global_position.x) > 20:
-		# 20 units is off screen so close level
-		MAIN.end_level()
 
 
 func fall_to_death():
