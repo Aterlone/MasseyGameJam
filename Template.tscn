@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://brnbcg0rlhtgr"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Ground" type="ColorRect" parent="."]
+offset_right = 1838.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+
+[node name="TextEdit" type="TextEdit" parent="Ground"]
+layout_mode = 0
+offset_right = 1145.0
+offset_bottom = 42.0
+text = "Ground Plane"
+
+[node name="Building" type="ColorRect" parent="."]
+offset_left = 278.0
+offset_top = -353.0
+offset_right = 515.0
+offset_bottom = -8.0
+
+[node name="TextEdit" type="TextEdit" parent="Building"]
+layout_mode = 0
+offset_right = 237.0
+offset_bottom = 346.0
+text = "                   Building"
+
+[node name="Broken Building" type="ColorRect" parent="."]
+offset_left = 896.0
+offset_top = -167.0
+offset_right = 1133.0
+offset_bottom = -2.0
+
+[node name="TextEdit" type="TextEdit" parent="Broken Building"]
+layout_mode = 0
+offset_right = 237.0
+offset_bottom = 165.0
+text = "          Broken Building Pile"
+
+[node name="Door" type="ColorRect" parent="."]
+offset_left = 351.0
+offset_top = -74.0
+offset_right = 432.0
+offset_bottom = 1.0
+color = Color(1, 0, 0, 1)
+
+[node name="TextEdit" type="TextEdit" parent="Door"]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 75.0
+text = "Doorway"
