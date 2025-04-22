@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://cw205maq37t5p"]
+
+[ext_resource type="Script" uid="uid://fsgm1twio33l" path="res://Player/player.gd" id="1_4ntmi"]
+[ext_resource type="Texture2D" uid="uid://dqgq06nbpk27d" path="res://LevelMap/Assets/player_icon.png" id="1_l8h54"]
+[ext_resource type="PackedScene" uid="uid://4u7qbdcrl0w" path="res://UI/hud.tscn" id="2_btcbx"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_edatq"]
+
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_edatq"]
+length = 0.623712
+
+[node name="Player" type="CharacterBody3D"]
+collision_layer = 2
+script = ExtResource("1_4ntmi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.6, 0, 0, 0)
+shape = SubResource("CylinderShape3D_edatq")
+
+[node name="WallCollider" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WallCollider"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+shape = SubResource("SeparationRayShape3D_edatq")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+pixel_size = 0.02
+texture = ExtResource("1_l8h54")
+
+[node name="FlagPoleDelayT" type="Timer" parent="."]
+one_shot = true
+
+[node name="JumpDurationT" type="Timer" parent="."]
+
+[node name="TwirlDurationT" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[node name="CoyoteT" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="FallDeathT" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="EntityCollider" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EntityCollider"]
+shape = SubResource("CylinderShape3D_edatq")
+
+[node name="HUD" parent="." instance=ExtResource("2_btcbx")]
