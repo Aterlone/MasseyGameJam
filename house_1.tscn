@@ -7,7 +7,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s75sy"]
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 size = Vector2(1209, 66)
+=======
+size = Vector2(1168.5, 66)
+>>>>>>> Stashed changes
 =======
 size = Vector2(1168.5, 66)
 >>>>>>> Stashed changes
