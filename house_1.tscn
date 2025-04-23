@@ -5,7 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://cq4q10u1w82xu" path="res://objects/door.png" id="4_68721"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s75sy"]
+<<<<<<< Updated upstream
 size = Vector2(1209, 66)
+=======
+size = Vector2(1168.5, 66)
+>>>>>>> Stashed changes
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mu17e"]
 size = Vector2(30, 41)
@@ -20,9 +24,10 @@ offset_bottom = 984.0
 color = Color(0.322237, 0.527376, 0.879988, 1)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(555, 328)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(528, 328)
+position = Vector2(-20.25, 0)
 shape = SubResource("RectangleShape2D_s75sy")
 
 [node name="Door" type="Area2D" parent="."]
