@@ -11,5 +11,9 @@
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
 position = Vector2(232, 160)
+GRAVITY = 300
+jump_height = -8000
+run_speed_max = 10000
+run_accel = 5000
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
