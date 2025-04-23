@@ -30,7 +30,7 @@ extends Area2D
 	"Z",
 ) var door_char
 
-var in_house: bool
+@export var in_house: bool
 var player_on_door = 0
 var player
 
@@ -63,8 +63,12 @@ func _on_body_exited(body):
 func scene_change(scene: String):
 	var this_scene = load(scene)
 	in_house = !in_house
+		
+	area_container.add_child(this_scene.instantiate())
+	
+	var other_door = area_container.get_child(1).get_node("Door"+str(door_char))
+	other_door.in_house = in_house
+	
+	player.global_position = other_door.global_position
 
 	area_container.get_child(0).queue_free()
-	
-	area_container.add_child(this_scene.instantiate())
-	player.global_position = area_container.get_child(0).get_node("Door"+str(door_char)).global_position
