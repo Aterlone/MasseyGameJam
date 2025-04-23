@@ -11,3 +11,4 @@ func _physics_process(delta: float) -> void:
 	var max_health = float(PLAYER.get_node("Sprite2D").max_health)
 	var value = 100 * (current_health / max_health)
 	$Control/ThirstBar.value = value
+	$Control/Label.text = str(round(value))
