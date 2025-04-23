@@ -57,7 +57,7 @@ func _physics_process(delta: float) -> void:
 
 
 func animate():
-	if $AnimationPlayer.current_animation == "climb_up"
+	if $AnimationPlayer.current_animation == "climb_up":
 		return
 	
 	if joy_x != 0:
