@@ -57,6 +57,8 @@ func _physics_process(delta: float) -> void:
 
 
 func animate():
+	if $AnimationPlayer.current_animation == "climb_up"
+		return
 	
 	if joy_x != 0:
 		$Sprite2D.scale.x = joy_x
@@ -187,6 +189,19 @@ func movement():
 	
 	movement_x()
 	movement_y()
+	
+	## climb up
+	if joy_x != 0:
+		$EmptyCollider.scale.x = joy_x
+		$SolidCollider.scale.x = joy_x
+	var empty = ($EmptyCollider.get_overlapping_bodies().size() == 0)
+	var solid = ($SolidCollider.get_overlapping_bodies().size() > 0)
+	
+	if empty and solid:
+		global_position = $SolidCollider.global_position
+		global_position.y -= 22
+		velocity.y = 0
+		$AnimationPlayer.play("climb_up")
 	
 	# keeps player from falling off
 	# prevents getting stuck on gridmap collision shapes
