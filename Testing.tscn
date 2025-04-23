@@ -1,13 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://do5va2lfbac07"]
+[gd_scene load_steps=9 format=3 uid="uid://do5va2lfbac07"]
 
 [ext_resource type="PackedScene" uid="uid://chs0nv8r8ro0j" path="res://player/player.tscn" id="1_axi3y"]
 [ext_resource type="PackedScene" uid="uid://dusrftt1q7hkb" path="res://objects/waterdrop.tscn" id="3_28q7j"]
 [ext_resource type="Script" uid="uid://bk1bf37xv1x5a" path="res://Misc/Door.gd" id="4_1x61k"]
+[ext_resource type="Script" uid="uid://dsbeyag0wuk5y" path="res://Misc/waterBottle.gd" id="4_lj67a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_axi3y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_28q7j"]
 size = Vector2(30, 37)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7jnsj"]
+radius = 6.08276
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1x61k"]
 
 [node name="Testing" type="Node2D"]
 
@@ -47,5 +53,19 @@ color = Color(1, 0, 0, 1)
 [node name="Waterdrop" parent="." instance=ExtResource("3_28q7j")]
 position = Vector2(-150, -103)
 
-[node name="Waterbottle" parent="." instance=ExtResource("3_28q7j")]
-position = Vector2(-93, -49)
+[node name="Waterbottle" type="Area2D" parent="."]
+position = Vector2(-114, -210)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("4_lj67a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Waterbottle"]
+shape = SubResource("CircleShape2D_7jnsj")
+
+[node name="Sprite2D" type="Sprite2D" parent="Waterbottle"]
+texture_filter = 1
+texture_repeat = 2
+scale = Vector2(0.015, 0.015)
+texture = SubResource("NoiseTexture2D_1x61k")
+
+[connection signal="area_entered" from="Waterbottle" to="Waterbottle" method="_on_area_entered"]
