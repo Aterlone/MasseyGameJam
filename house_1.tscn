@@ -1,13 +1,19 @@
-[gd_scene load_steps=7 format=4 uid="uid://bumr1as6ubt52"]
+[gd_scene load_steps=10 format=4 uid="uid://bumr1as6ubt52"]
 
 [ext_resource type="Texture2D" uid="uid://blxghtt6wglwq" path="res://backgroundwall.png" id="1_mu17e"]
 [ext_resource type="PackedScene" uid="uid://dusrftt1q7hkb" path="res://objects/waterdrop.tscn" id="3_68721"]
 [ext_resource type="Script" uid="uid://bk1bf37xv1x5a" path="res://Misc/Door.gd" id="3_l6kfo"]
 [ext_resource type="Texture2D" uid="uid://cq4q10u1w82xu" path="res://objects/door.png" id="4_68721"]
+[ext_resource type="Script" uid="uid://dsbeyag0wuk5y" path="res://Misc/waterBottle.gd" id="4_kn2ne"]
 [ext_resource type="PackedScene" uid="uid://d2ltot4cgc2nk" path="res://tiles/collision_tiles.tscn" id="4_mu17e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mu17e"]
 size = Vector2(30, 41)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o4k3h"]
+radius = 6.08276
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8xm3c"]
 
 [node name="house_1" type="Node2D"]
 
@@ -33,6 +39,22 @@ shape = SubResource("RectangleShape2D_mu17e")
 position = Vector2(-1, 0.5)
 texture = ExtResource("4_68721")
 
+[node name="Waterbottle" type="Area2D" parent="Door"]
+position = Vector2(413, -442)
+scale = Vector2(1.84683, 2.63133)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("4_kn2ne")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/Waterbottle"]
+shape = SubResource("CircleShape2D_o4k3h")
+
+[node name="Sprite2D" type="Sprite2D" parent="Door/Waterbottle"]
+texture_filter = 1
+texture_repeat = 2
+scale = Vector2(0.015, 0.015)
+texture = SubResource("NoiseTexture2D_8xm3c")
+
 [node name="Door2" type="Area2D" parent="."]
 position = Vector2(825, -174)
 collision_mask = 3
@@ -47,20 +69,6 @@ shape = SubResource("RectangleShape2D_mu17e")
 position = Vector2(-1, 0.5)
 texture = ExtResource("4_68721")
 
-[node name="Door3" type="Area2D" parent="."]
-position = Vector2(825, -174)
-collision_mask = 3
-script = ExtResource("3_l6kfo")
-door_char = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door3"]
-position = Vector2(-1, 0.5)
-shape = SubResource("RectangleShape2D_mu17e")
-
-[node name="Sprite2D" type="Sprite2D" parent="Door3"]
-position = Vector2(-1, 0.5)
-texture = ExtResource("4_68721")
-
 [node name="Waterdrop" parent="." instance=ExtResource("3_68721")]
 position = Vector2(485, 262)
 
@@ -72,7 +80,6 @@ tile_map_data = PackedByteArray("AAAIAB4AAgABAAEAAAAIAB0AAgABAAEAAAAIABwAAgABAAE
 
 [connection signal="body_entered" from="Door" to="Door" method="_on_body_entered"]
 [connection signal="body_exited" from="Door" to="Door" method="_on_body_exited"]
+[connection signal="body_entered" from="Door/Waterbottle" to="Door/Waterbottle" method="_on_body_entered"]
 [connection signal="body_entered" from="Door2" to="Door2" method="_on_body_entered"]
 [connection signal="body_exited" from="Door2" to="Door2" method="_on_body_exited"]
-[connection signal="body_entered" from="Door3" to="Door3" method="_on_body_entered"]
-[connection signal="body_exited" from="Door3" to="Door3" method="_on_body_exited"]

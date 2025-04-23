@@ -19,7 +19,7 @@ size = Vector2(30, 41)
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -8.0
 offset_top = -24.0
-offset_right = 1160.0
+offset_right = 2236.0
 offset_bottom = 664.0
 color = Color(0.799238, 0.737322, 0.582925, 1)
 
@@ -37,14 +37,14 @@ position = Vector2(1601, 892)
 position = Vector2(528, 328)
 shape = SubResource("RectangleShape2D_ilcil")
 
-[node name="CollisionTiles" parent="." instance=ExtResource("1_3hls8")]
-position = Vector2(56, 196)
+[node name="Waterdrop2" parent="." instance=ExtResource("1_3hls8")]
+position = Vector2(225, 261)
 
 [node name="Waterdrop" parent="." instance=ExtResource("1_3hls8")]
-position = Vector2(485, 262)
+position = Vector2(671, 285)
 
 [node name="Door" type="Area2D" parent="."]
-position = Vector2(1340, 266)
+position = Vector2(1228, 257)
 collision_mask = 3
 script = ExtResource("2_hbghi")
 door_char = 1
