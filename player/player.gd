@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 
 @onready var MAIN = get_tree().get_root().get_child(0)
+@onready var area_container = get_tree().get_root().get_node("Main/AreaContainer")
+
 
 var cam_locked = false # if true camera doesn't move
 
@@ -37,6 +39,7 @@ var flag_pole_node = null
 
 var current_animation = ""
 
+var in_house = 0
 
 func _ready() -> void:
 	var size = Vector2i(640 * 3, 360 * 3)
@@ -79,7 +82,12 @@ func animate():
 	if $AnimationPlayer.has_animation(current_animation):
 		$AnimationPlayer.play(current_animation)
 
-
+## Change scene
+func scene_change(scene: String):
+	var main_scene = load(scene)
+	area_container.add_child(main_scene.instantiate())
+	area_container.get_child(0).queue_free()
+	
 func get_controls():
 	joy_y = sign(Input.get_action_strength("ui_up") - Input.get_action_strength("ui_down"))
 	joy_x = sign(Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"))
@@ -89,14 +97,13 @@ func get_controls():
 	else:
 		button_jump = 0
 		
-	var area_container = get_tree().get_root().get_node("Main/AreaContainer")
-	if area_container and not area_container.has_node("house_1"):
-		var house_scene = preload("res://house_1.tscn")
-		var house_instance = house_scene.instantiate()
-		
-		area_container.add_child(house_instance)
-		area_container.get_child(0).queue_free()
-
+	if Input.is_action_just_pressed("ui_accept"):
+		if in_house:
+			scene_change("res://level_1.tscn")
+			in_house = 0
+		else:
+			scene_change("res://house_1.tscn")
+			in_house = 1
 
 func movement_x():
 	"""Handles running and crouching, impulse x"""
