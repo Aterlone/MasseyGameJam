@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://4ypebyiusrnv"
+=======
+uid="uid://df8hgoocxb5k"
+>>>>>>> 7ac86ad (fixed concrete tiles)
 path="res://.godot/imported/house_green.png-06df6f04039381e4b53997a2fe1e15b4.ctex"
 metadata={
 "vram_texture": false
