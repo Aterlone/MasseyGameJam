@@ -189,20 +189,20 @@ func movement():
 	
 	movement_x()
 	movement_y()
-	
-	## climb up
-	if joy_x != 0:
-		$EmptyCollider.scale.x = joy_x
-		$SolidCollider.scale.x = joy_x
-	var empty = ($EmptyCollider.get_overlapping_bodies().size() == 0)
-	var solid = ($SolidCollider.get_overlapping_bodies().size() > 0)
-	
-	if empty and solid:
-		global_position = $SolidCollider.global_position
-		global_position.y -= 22
-		global_position.x += joy_x * 2
-		velocity.y = 0
-		$AnimationPlayer.play("climb_up")
+	if !is_on_floor():
+		## climb up
+		if joy_x != 0:
+			$EmptyCollider.scale.x = joy_x
+			$SolidCollider.scale.x = joy_x
+		var empty = ($EmptyCollider.get_overlapping_bodies().size() == 0)
+		var solid = ($SolidCollider.get_overlapping_bodies().size() > 0)
+		
+		if empty and solid:
+			global_position = $SolidCollider.global_position
+			global_position.y -= 22
+			global_position.x += joy_x * 2
+			velocity.y = 0
+			$AnimationPlayer.play("climb_up")
 	
 	# keeps player from falling off
 	# prevents getting stuck on gridmap collision shapes
