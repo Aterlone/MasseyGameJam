@@ -12,8 +12,9 @@
 [node name="level1" parent="AreaContainer" instance=ExtResource("1_h2yge")]
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
-position = Vector2(232, 160)
+position = Vector2(231, 274)
 
 [node name="MainCamera" parent="." instance=ExtResource("3_h2yge")]
+position = Vector2(-1, 174)
 
 [node name="HUD" parent="." instance=ExtResource("4_1bvp3")]
