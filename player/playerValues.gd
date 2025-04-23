@@ -12,9 +12,12 @@ extends Sprite2D
 var extra = 0
 
 ## Day night hurt cycle
-@export var daylight: float = 0
+var daylight: float = 0
 const min_max = Vector2(1, 8)
 var hurt_multi: float = 8
+
+## Inside/Outside
+@export var outside: bool = true;
 
 ## Update
 func _process(delta):
@@ -22,6 +25,11 @@ func _process(delta):
 	score += delta
 	
 	## Hurt
+	if outside:
+		daylight = 1
+	else:
+		daylight = 0
+	
 	hurt_multi = daylight * (min_max.y - min_max.x) + min_max.x
 	
 	extra += delta * hurt_multi;
