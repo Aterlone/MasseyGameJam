@@ -3,6 +3,8 @@ extends CharacterBody2D
 
 @onready var MAIN = get_tree().get_root().get_child(0)
 
+@export var in_house: bool
+
 var cam_locked = false # if true camera doesn't move
 
 # controls
@@ -36,8 +38,6 @@ var flag_pole = false # in flag pole mode
 var flag_pole_node = null
 
 var current_animation = ""
-
-var in_house = 0
 
 func _ready() -> void:
 	var size = Vector2i(640 * 3, 360 * 3)

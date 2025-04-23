@@ -30,7 +30,6 @@ extends Area2D
 	"Z",
 ) var door_char
 
-@export var in_house: bool
 var player_on_door = 0
 var player
 
@@ -41,13 +40,13 @@ func _process(delta: float) -> void:
 	if player_on_door:
 		if Input.is_action_just_pressed("ui_accept"):
 			print("SCENE CHANGE")
-			if in_house:
+			if player.in_house:
 				print("OUT HOUSE")
 				scene_change("res://level_1.tscn")
 			else:
-				print("IN HOUSE" + str(in_house))
+				print("IN HOUSE" + str(player.in_house))
 				scene_change("res://house_1.tscn")
-			player.get_node("Sprite2D").outside = !in_house
+			player.get_node("Sprite2D").outside = !player.in_house
 
 func _on_body_entered(body):
 	player = body;
@@ -62,12 +61,11 @@ func _on_body_exited(body):
 ## Change scene
 func scene_change(scene: String):
 	var this_scene = load(scene)
-	in_house = !in_house
+	player.in_house = !player.in_house
 		
 	area_container.add_child(this_scene.instantiate())
 	
 	var other_door = area_container.get_child(1).get_node("Door"+str(door_char))
-	other_door.in_house = in_house
 	
 	player.global_position = other_door.global_position
 

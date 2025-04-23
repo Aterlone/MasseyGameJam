@@ -22,6 +22,7 @@ var hurt_multi: float = 8
 ## Inside/Outside
 @export var outside: bool = true;
 
+
 ## Update
 func _process(delta):
 	## Time Survived
