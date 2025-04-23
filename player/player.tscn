@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://chs0nv8r8ro0j"]
+[gd_scene load_steps=11 format=3 uid="uid://chs0nv8r8ro0j"]
 
 [ext_resource type="Script" uid="uid://fsgm1twio33l" path="res://player/player.gd" id="1_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://dpx34vbpcj3q4" path="res://player/player.png" id="2_hqtel"]
@@ -77,6 +77,9 @@ _data = {
 &"stand": SubResource("Animation_2hs0m")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1dw6"]
+size = Vector2(8, 32)
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_i3pqv")
@@ -119,3 +122,10 @@ shape = SubResource("RectangleShape2D_rkbax")
 libraries = {
 &"": SubResource("AnimationLibrary_n7ghd")
 }
+
+[node name="ObjectDetector" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectDetector"]
+shape = SubResource("RectangleShape2D_g1dw6")
