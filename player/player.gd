@@ -18,18 +18,18 @@ var jumps = 0 # number of times jumped
 var impulse = Vector2.ZERO # used to apply a force alongside velocity such as wall jump
 
 var GRAVITY = 80
-var jump_height = -1800 
+var jump_height = -1800 * 10 
 var gravity_jump_quotient = 0.75 # how much gravity is lessened by when jumping
 
-var run_speed_max = 750
-var run_accel = 75
+var run_speed_max = 3750
+var run_accel = 675
 var crouch_friction = 0.3  # rate of slow down when crouched and moving in x
 
 var wall_jump_speed_x = run_speed_max * 2
 var wall_jump_speed_y = jump_height * 0.75
 var wall_jump_friction = 0.4
 
-var terminal_speed_x = 1800
+var terminal_speed_x = 5800
 var terminal_speed_y = 2880
 
 var flag_pole = false # in flag pole mode
@@ -60,13 +60,6 @@ func _physics_process(delta: float) -> void:
 
 func animate():
 	
-	if is_on_floor():
-		$Sprite2D.frame = 0
-	else:
-		$Sprite2D.frame = 1
-	
-	return
-	
 	current_animation = ""
 	if is_on_floor():
 		if is_zero_approx(velocity.x):
@@ -78,9 +71,12 @@ func animate():
 			current_animation = "wall slide"
 			return
 		if velocity.y > 0:
-			current_animation = "jump up"
+			current_animation = "jump"
 		else:
 			current_animation = "fall"
+	
+	if $AnimationPlayer.has_animation(current_animation):
+		$AnimationPlayer.play(current_animation)
 
 
 func get_controls():
