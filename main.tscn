@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://n6u7lr0nc7i6"]
 
-[ext_resource type="PackedScene" uid="uid://bh727cbn7ma3w" path="res://level_1.tscn" id="1_h2yge"]
+[ext_resource type="PackedScene" path="res://level_1.tscn" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://chs0nv8r8ro0j" path="res://player/player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://dusrftt1q7hkb" path="res://objects/waterdrop.tscn" id="2_0xm2m"]
 
