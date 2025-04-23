@@ -33,3 +33,5 @@ position = Vector2(232, 160)
 
 [node name="Waterdrop" parent="." instance=ExtResource("2_0xm2m")]
 position = Vector2(485, 262)
+
+[node name="Node2D" type="Node2D" parent="."]
