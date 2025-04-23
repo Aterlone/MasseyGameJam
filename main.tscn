@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://n6u7lr0nc7i6"]
+[gd_scene load_steps=6 format=3 uid="uid://n6u7lr0nc7i6"]
 
 [ext_resource type="PackedScene" uid="uid://bwnkl77idxjup" path="res://level_1.tscn" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://chs0nv8r8ro0j" path="res://player/player.tscn" id="1_ig7tw"]
-[ext_resource type="PackedScene" path="res://player/main_camera.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://fdatdf51khw2" path="res://player/main_camera.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dy1tufsxdobps" path="res://UI/HUD.tscn" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://dob8cj0sjq6vc" path="res://Misc/giveUp.gd" id="5_lquwl"]
 
 [node name="Main" type="Node2D"]
 
@@ -17,3 +18,14 @@ position = Vector2(232, 160)
 [node name="MainCamera" parent="." instance=ExtResource("3_h2yge")]
 
 [node name="HUD" parent="." instance=ExtResource("4_1bvp3")]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 255.0
+offset_top = -248.0
+offset_right = 323.0
+offset_bottom = -217.0
+scale = Vector2(0.948823, 1.08197)
+text = "Give Up"
+script = ExtResource("5_lquwl")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
