@@ -88,6 +88,14 @@ func get_controls():
 		button_jump += 1
 	else:
 		button_jump = 0
+		
+	var area_container = get_tree().get_root().get_node("Main/AreaContainer")
+	if area_container and not area_container.has_node("house_1"):
+		var house_scene = preload("res://house_1.tscn")
+		var house_instance = house_scene.instantiate()
+		
+		area_container.add_child(house_instance)
+		area_container.get_child(0).queue_free()
 
 
 func movement_x():
