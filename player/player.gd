@@ -40,9 +40,9 @@ var flag_pole_node = null
 var current_animation = ""
 
 func _ready() -> void:
-	var size = Vector2i(640 * 3, 360 * 3)
-	get_window().size = size
-	get_window().move_to_center()
+	#var size = Vector2i(640 * 3, 360 * 3)
+	#get_window().size = size
+	#get_window().move_to_center()
 	# time of which player can still fully jump after falling off of a ledge
 	$CoyoteT.connect("timeout", on_CoyoteT_timeout)
 	$FallDeathT.connect("timeout", on_FallDeathT_timeout)
