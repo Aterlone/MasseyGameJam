@@ -200,6 +200,7 @@ func movement():
 	if empty and solid:
 		global_position = $SolidCollider.global_position
 		global_position.y -= 22
+		global_position.x += joy_x * 2
 		velocity.y = 0
 		$AnimationPlayer.play("climb_up")
 	
