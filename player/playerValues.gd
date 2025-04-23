@@ -47,5 +47,5 @@ func _process(delta):
 		extra -= floor(extra)
 
 # Heal the player
-func heal() -> void:
-	current_health = min(current_health + 5, max_health)
+func heal(amount) -> void:
+	current_health = min(current_health + amount, max_health)
