@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bh727cbn7ma3w"]
+[gd_scene load_steps=3 format=3 uid="uid://bh727cbn7ma3w"]
+
+[ext_resource type="PackedScene" uid="uid://dusrftt1q7hkb" path="res://objects/waterdrop.tscn" id="1_3hls8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ilcil"]
 size = Vector2(1209, 66)
@@ -24,3 +26,6 @@ color = Color(0.322237, 0.527376, 0.879988, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(528, 328)
 shape = SubResource("RectangleShape2D_ilcil")
+
+[node name="Waterdrop" parent="." instance=ExtResource("1_3hls8")]
+position = Vector2(485, 262)
