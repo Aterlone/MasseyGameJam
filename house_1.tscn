@@ -1,12 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://bumr1as6ubt52"]
+[gd_scene load_steps=7 format=3 uid="uid://bumr1as6ubt52"]
 
 [ext_resource type="Script" uid="uid://dp8crx1qbp3sc" path="res://Misc/collapsingObject.gd" id="1_4im15"]
 [ext_resource type="Texture2D" uid="uid://byrbstmnsejcj" path="res://objects/waterdrop.png" id="2_l6kfo"]
+[ext_resource type="Script" uid="uid://bk1bf37xv1x5a" path="res://Misc/Door.gd" id="3_l6kfo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s75sy"]
 size = Vector2(1209, 66)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_68721"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_68721"]
+size = Vector2(30, 37)
 
 [node name="house_1" type="Node2D"]
 
@@ -37,4 +41,22 @@ shape = SubResource("CircleShape2D_68721")
 scale = Vector2(1, 1.1875)
 texture = ExtResource("2_l6kfo")
 
+[node name="Door" type="Area2D" parent="."]
+position = Vector2(570, 275)
+collision_mask = 3
+script = ExtResource("3_l6kfo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+shape = SubResource("RectangleShape2D_68721")
+
+[node name="DoorTexture" type="ColorRect" parent="Door"]
+offset_left = -15.0
+offset_top = -19.0
+offset_right = 15.0
+offset_bottom = 19.0
+color = Color(1, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
 [connection signal="body_entered" from="Water Drop" to="Water Drop" method="_on_body_entered"]
+[connection signal="body_entered" from="Door" to="Door" method="_on_body_entered"]
+[connection signal="body_exited" from="Door" to="Door" method="_on_body_exited"]

@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 				scene_change("res://house_1.tscn")
 				in_house = true
 				
-			player.get_node("Sprite2D").outside = !in_house
+			player.get_node("Sprite2D").outside = not in_house
 
 func _on_body_entered(body):
 	player = body;
@@ -26,6 +26,7 @@ func _on_body_entered(body):
 func _on_body_exited(body):
 	if body.name == "Player":
 		player_on_door = 0
+		
 ## Change scene
 func scene_change(scene: String):
 	var this_scene = load(scene)
