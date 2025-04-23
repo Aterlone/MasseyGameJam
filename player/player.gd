@@ -2,8 +2,6 @@ extends CharacterBody2D
 
 
 @onready var MAIN = get_tree().get_root().get_child(0)
-@onready var area_container = get_tree().get_root().get_node("Main/AreaContainer")
-
 
 var cam_locked = false # if true camera doesn't move
 
@@ -81,12 +79,6 @@ func animate():
 	
 	if $AnimationPlayer.has_animation(current_animation):
 		$AnimationPlayer.play(current_animation)
-
-## Change scene
-func scene_change(scene: String):
-	var main_scene = load(scene)
-	area_container.add_child(main_scene.instantiate())
-	area_container.get_child(0).queue_free()
 	
 func get_controls():
 	joy_y = sign(Input.get_action_strength("ui_up") - Input.get_action_strength("ui_down"))
@@ -96,14 +88,6 @@ func get_controls():
 		button_jump += 1
 	else:
 		button_jump = 0
-		
-	if Input.is_action_just_pressed("ui_accept"):
-		if in_house:
-			scene_change("res://level_1.tscn")
-			in_house = 0
-		else:
-			scene_change("res://house_1.tscn")
-			in_house = 1
 
 func movement_x():
 	"""Handles running and crouching, impulse x"""
