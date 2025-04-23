@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckjlo8mtlnnps"]
+
+[ext_resource type="Texture2D" uid="uid://c05o1qy3qw4sp" path="res://tiles/collapse.png" id="1_jjcuo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ovwm"]
+
+[node name="CollapsPlatform" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_5ovwm")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
+texture = ExtResource("1_jjcuo")
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
+position = Vector2(-48, 0)
+texture = ExtResource("1_jjcuo")
