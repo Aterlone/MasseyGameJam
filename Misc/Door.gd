@@ -70,5 +70,7 @@ func scene_change(scene: String):
 	var other_door = area_container.get_child(1).get_node("Door"+str(door_char))
 	
 	player.global_position = other_door.global_position
+	player.get_node("Sprite2D").checkpoint()
 	
 	area_container.get_child(0).queue_free()
+	
