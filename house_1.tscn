@@ -1,14 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bumr1as6ubt52"]
+[gd_scene load_steps=6 format=3 uid="uid://bumr1as6ubt52"]
 
-[ext_resource type="Script" uid="uid://dp8crx1qbp3sc" path="res://Misc/collapsingObject.gd" id="1_4im15"]
-[ext_resource type="Texture2D" uid="uid://byrbstmnsejcj" path="res://objects/waterdrop.png" id="2_l6kfo"]
+[ext_resource type="PackedScene" uid="uid://dusrftt1q7hkb" path="res://objects/waterdrop.tscn" id="3_68721"]
 [ext_resource type="Script" uid="uid://bk1bf37xv1x5a" path="res://Misc/Door.gd" id="3_l6kfo"]
 [ext_resource type="Texture2D" uid="uid://cq4q10u1w82xu" path="res://objects/door.png" id="4_68721"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s75sy"]
 size = Vector2(1209, 66)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_68721"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mu17e"]
 size = Vector2(30, 41)
@@ -28,20 +25,6 @@ color = Color(0.322237, 0.527376, 0.879988, 1)
 position = Vector2(528, 328)
 shape = SubResource("RectangleShape2D_s75sy")
 
-[node name="Water Drop" type="Area2D" parent="."]
-position = Vector2(476, 166)
-scale = Vector2(4, 4)
-collision_layer = 255
-collision_mask = 255
-script = ExtResource("1_4im15")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Water Drop"]
-shape = SubResource("CircleShape2D_68721")
-
-[node name="Waterdrop" type="Sprite2D" parent="Water Drop"]
-scale = Vector2(1, 1.1875)
-texture = ExtResource("2_l6kfo")
-
 [node name="Door" type="Area2D" parent="."]
 position = Vector2(342, 275)
 collision_mask = 3
@@ -49,13 +32,18 @@ script = ExtResource("3_l6kfo")
 door_char = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
-position = Vector2(30, 0.5)
+position = Vector2(-1, 0.5)
 shape = SubResource("RectangleShape2D_mu17e")
 
 [node name="Sprite2D" type="Sprite2D" parent="Door"]
-position = Vector2(30, 0.5)
+position = Vector2(-1, 0.5)
 texture = ExtResource("4_68721")
 
-[connection signal="body_entered" from="Water Drop" to="Water Drop" method="_on_body_entered"]
+[node name="Waterdrop" parent="." instance=ExtResource("3_68721")]
+position = Vector2(485, 262)
+
+[node name="Waterdrop2" parent="." instance=ExtResource("3_68721")]
+position = Vector2(163, 244)
+
 [connection signal="body_entered" from="Door" to="Door" method="_on_body_entered"]
 [connection signal="body_exited" from="Door" to="Door" method="_on_body_exited"]

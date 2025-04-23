@@ -34,7 +34,8 @@ var player_on_door = 0
 var player
 
 func _ready() -> void:
-	name = "Door" + str(door_char)
+	self.name = "Door" + str(door_char)
+	self.name
 
 func _process(delta: float) -> void:
 	if player_on_door:
@@ -46,6 +47,7 @@ func _process(delta: float) -> void:
 			else:
 				print("IN HOUSE" + str(player.in_house))
 				scene_change("res://house_1.tscn")
+			
 			player.get_node("Sprite2D").outside = !player.in_house
 
 func _on_body_entered(body):
@@ -57,16 +59,17 @@ func _on_body_entered(body):
 func _on_body_exited(body):
 	if body.name == "Player":
 		player_on_door = 0
-		
+	
+	
 ## Change scene
 func scene_change(scene: String):
 	var this_scene = load(scene)
 	player.in_house = !player.in_house
-		
+	
 	area_container.add_child(this_scene.instantiate())
 	
 	var other_door = area_container.get_child(1).get_node("Door"+str(door_char))
 	
 	player.global_position = other_door.global_position
-
+	
 	area_container.get_child(0).queue_free()
