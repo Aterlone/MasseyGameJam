@@ -35,7 +35,6 @@ var player
 
 func _ready() -> void:
 	self.name = "Door" + str(door_char)
-	self.name
 
 func _process(delta: float) -> void:
 	if player_on_door:
