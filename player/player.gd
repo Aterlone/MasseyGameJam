@@ -61,13 +61,6 @@ func _physics_process(delta: float) -> void:
 
 func animate():
 	
-	if is_on_floor():
-		$Sprite2D.frame = 0
-	else:
-		$Sprite2D.frame = 1
-	
-	return
-	
 	current_animation = ""
 	if is_on_floor():
 		if is_zero_approx(velocity.x):
@@ -85,7 +78,9 @@ func animate():
 			current_animation = "jump up"
 		else:
 			current_animation = "fall"
-
+			
+	if $AnimationPlayer.has_animation(current_animation):
+		$AnimationPlayer.play(current_animation)
 
 func get_controls():
 	joy_y = sign(Input.get_action_strength("ui_up") - Input.get_action_strength("ui_down"))
