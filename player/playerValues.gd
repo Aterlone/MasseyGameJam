@@ -44,9 +44,7 @@ func _process(delta):
 	while extra > 1:
 		current_health = max(current_health-floor(extra), 0)
 		extra -= floor(extra)
-		print("Took damage! Health:", current_health)
 
 # Heal the player
 func heal() -> void:
 	current_health = min(current_health + 5, max_health)
-	print("Healed! Health:", current_health)
