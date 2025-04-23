@@ -22,15 +22,22 @@ var hurt_multi: float = 8
 ## Inside/Outside
 @export var outside: bool = true;
 
+## Checkpoint Values
+var cp_pos: Vector2
+var cp_health: int
+
+func _ready() -> void:
+	cp_pos = get_parent().global_position
+	cp_health = current_health
 
 ## Update
 func _process(delta):
 	## Time Survived
 
-	if not current_health:
-		get_tree().reload_current_scene()	
-		area_container.add_child(load("res://main.tscn").instantiate())
-		area_container.get_child(0).queue_free()	
+	if not current_health:		
+		# Check point swap vals
+		self.current_health = cp_health
+		get_parent().global_position = cp_pos
 	score += delta
 	
 	## Hurt
@@ -49,3 +56,7 @@ func _process(delta):
 # Heal the player
 func heal(amount) -> void:
 	current_health = min(current_health + amount, max_health)
+	
+func checkpoint():
+	cp_pos = get_parent().global_position
+	cp_health = current_health
