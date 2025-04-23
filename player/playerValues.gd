@@ -20,7 +20,7 @@ func _process(delta):
 	if extra > 1:
 		current_health = max(current_health-floor(extra), 0)
 		extra -= floor(extra)
-	print("Took damage! Health:", current_health)
+		print("Took damage! Health:", current_health)
 
 # Heal the player
 func heal() -> void:
