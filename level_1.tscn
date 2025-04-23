@@ -1,14 +1,18 @@
-[gd_scene load_steps=6 format=4 uid="uid://bwnkl77idxjup"]
+[gd_scene load_steps=8 format=4 uid="uid://bwnkl77idxjup"]
 
 [ext_resource type="PackedScene" uid="uid://dusrftt1q7hkb" path="res://objects/waterdrop.tscn" id="1_3hls8"]
 [ext_resource type="Script" uid="uid://bk1bf37xv1x5a" path="res://Misc/Door.gd" id="2_hbghi"]
 [ext_resource type="PackedScene" uid="uid://d2ltot4cgc2nk" path="res://tiles/collision_tiles.tscn" id="3_hn12h"]
+[ext_resource type="Texture2D" uid="uid://cq4q10u1w82xu" path="res://objects/door.png" id="3_ihfcg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ilcil"]
 size = Vector2(1209, 66)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hn12h"]
-size = Vector2(30, 37)
+size = Vector2(30, 41.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ihfcg"]
+size = Vector2(30, 41)
 
 [node name="level1" type="Node2D"]
 
@@ -46,15 +50,12 @@ script = ExtResource("2_hbghi")
 door_char = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+position = Vector2(0, -7.25)
 shape = SubResource("RectangleShape2D_hn12h")
 
-[node name="DoorTexture" type="ColorRect" parent="Door"]
-offset_left = -15.0
-offset_top = -19.0
-offset_right = 15.0
-offset_bottom = 19.0
-color = Color(1, 0, 0, 1)
-metadata/_edit_use_anchors_ = true
+[node name="Sprite2D" type="Sprite2D" parent="Door"]
+position = Vector2(0, -7)
+texture = ExtResource("3_ihfcg")
 
 [node name="Door2" type="Area2D" parent="."]
 position = Vector2(570, 275)
@@ -62,17 +63,17 @@ collision_mask = 3
 script = ExtResource("2_hbghi")
 door_char = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door2"]
-position = Vector2(280, 3)
-shape = SubResource("RectangleShape2D_hn12h")
+[node name="Sprite2D" type="Sprite2D" parent="Door2"]
+position = Vector2(314, -6.5)
+texture = ExtResource("3_ihfcg")
 
-[node name="DoorTexture" type="ColorRect" parent="Door2"]
-offset_left = 265.0
-offset_top = -16.0
-offset_right = 295.0
-offset_bottom = 22.0
-color = Color(1, 0, 0, 1)
-metadata/_edit_use_anchors_ = true
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door2"]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_ihfcg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door2/CollisionShape2D"]
+position = Vector2(314, 1)
+shape = SubResource("RectangleShape2D_ihfcg")
 
 [node name="CollisionTiles2" parent="." instance=ExtResource("3_hn12h")]
 position = Vector2(1, 0)
