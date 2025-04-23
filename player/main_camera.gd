@@ -6,5 +6,4 @@ extends Camera2D
 
 func _physics_process(delta: float) -> void:
 	global_position.x = global_position.x + (PLAYER.global_position.x - global_position.x) * 0.22
-	if PLAYER.velocity.y > 0:
-		global_position.y = global_position.y + (PLAYER.global_position.y - global_position.y) * 0.05
+	global_position.y = global_position.y + (PLAYER.global_position.y - global_position.y) * 0.2
