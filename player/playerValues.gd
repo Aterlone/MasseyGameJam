@@ -1,11 +1,10 @@
-extends CharacterBody2D
+extends Sprite2D
 
 # Player values
 
 ## Water needed for life
 @export var max_health: int = 100
 @export var current_health: int = 100
-@export var move_speed: float = 200.0
 
 ## Time Survived
 @export var score: int = 0
@@ -17,11 +16,10 @@ var extra = 0
 ## Time Survived
 func _process(delta):
 	score += delta
-	extra += floor(delta)
-	if delta > 1:
+	extra += delta
+	if extra > 1:
 		current_health = max(current_health-floor(extra), 0)
-		
-	extra -= floor(extra)
+		extra -= floor(extra)
 	print("Took damage! Health:", current_health)
 
 # Heal the player

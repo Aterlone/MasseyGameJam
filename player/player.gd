@@ -19,7 +19,6 @@ var impulse = Vector2.ZERO # used to apply a force alongside velocity such as wa
 
 var GRAVITY = 80
 var jump_height = -1800 
-var twirl_height = jump_height / 3
 var gravity_jump_quotient = 0.75 # how much gravity is lessened by when jumping
 
 var run_speed_max = 750
@@ -77,9 +76,6 @@ func animate():
 	else:
 		if $WallCollider.get_overlapping_bodies().size() > 0:
 			current_animation = "wall slide"
-			return
-		if !$TwirlDurationT.is_stopped():
-			current_animation = "twirl"
 			return
 		if velocity.y > 0:
 			current_animation = "jump up"
@@ -170,9 +166,6 @@ func movement_y():
 			jumps += 1
 			if jumps == 1:
 				velocity.y = jump_height * delta
-			elif jumps > 1 and $TwirlDurationT.is_stopped():
-				$TwirlDurationT.start()
-				velocity.y = twirl_height * delta
 	
 	# jump follow-through
 	var gravity_coef = 1
