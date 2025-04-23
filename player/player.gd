@@ -17,20 +17,20 @@ var jumps = 0 # number of times jumped
 
 var impulse = Vector2.ZERO # used to apply a force alongside velocity such as wall jump
 
-@export var GRAVITY = 60000
-@export var jump_height = -3000000 
+@export var GRAVITY = 300
+@export var jump_height = -8000
 var gravity_jump_quotient = 0.75 # how much gravity is lessened by when jumping
 
-@export var run_speed_max = 5000
-@export var run_accel = 1000
+@export var run_speed_max = 10000
+@export var run_accel = 5000
 var crouch_friction = 0.3  # rate of slow down when crouched and moving in x
 
 var wall_jump_speed_x = run_speed_max * 2
 var wall_jump_speed_y = jump_height * 0.75
 var wall_jump_friction = 0.4
 
-var terminal_speed_x = 5800
-var terminal_speed_y = 3-0000000
+var terminal_speed_x = 5800000
+var terminal_speed_y = 3000000000
 
 var flag_pole = false # in flag pole mode
 var flag_pole_node = null

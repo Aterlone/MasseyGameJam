@@ -35,4 +35,3 @@ position = Vector2(232, 160)
 position = Vector2(485, 262)
 
 [node name="AreaContainer" type="Node2D" parent="."]
-
