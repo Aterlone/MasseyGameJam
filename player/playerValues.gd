@@ -38,6 +38,7 @@ func _process(delta):
 		# Check point swap vals
 		self.current_health = cp_health
 		get_parent().global_position = cp_pos
+		
 	score += delta
 	
 	## Hurt
