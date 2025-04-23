@@ -11,6 +11,14 @@ config_version=5
 [application]
 
 config/name="MasseyGameJam"
-run/main_scene="uid://brnbcg0rlhtgr"
+run/main_scene="uid://n6u7lr0nc7i6"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/stretch/mode="viewport"
+window/stretch/aspect="keep_height"
+window/stretch/scale_mode="integer"

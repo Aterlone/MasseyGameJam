@@ -1,4 +1,4 @@
-extends CharacterBody3D
+extends CharacterBody2D
 
 
 @onready var MAIN = get_tree().get_root().get_child(0)
@@ -18,7 +18,7 @@ var jumps = 0 # number of times jumped
 var impulse = Vector2.ZERO # used to apply a force alongside velocity such as wall jump
 
 var GRAVITY = 80
-var jump_height = 1800 
+var jump_height = -1800 
 var twirl_height = jump_height / 3
 var gravity_jump_quotient = 0.75 # how much gravity is lessened by when jumping
 
@@ -40,6 +40,9 @@ var current_animation = ""
 
 
 func _ready() -> void:
+	var size = Vector2i(640 * 3, 360 * 3)
+	get_window().size = size
+	get_window().move_to_center()
 	# time of which player can still fully jump after falling off of a ledge
 	$CoyoteT.connect("timeout", on_CoyoteT_timeout)
 	$FallDeathT.connect("timeout", on_FallDeathT_timeout)
@@ -54,13 +57,17 @@ func _physics_process(delta: float) -> void:
 	
 	animate()
 	
-	if $EntityCollider.get_overlapping_areas().size() > 0:
-		# death
-		fall_to_death()
-		return
 
 
 func animate():
+	
+	if is_on_floor():
+		$Sprite2D.frame = 0
+	else:
+		$Sprite2D.frame = 1
+	
+	return
+	
 	current_animation = ""
 	if is_on_floor():
 		if is_zero_approx(velocity.x):
@@ -178,7 +185,7 @@ func movement_y():
 		impulse.x = 0
 	
 	# gravity
-	velocity.y -= GRAVITY * delta * gravity_coef
+	velocity.y += GRAVITY * delta * gravity_coef
 	
 	# speed cap y
 	var delta_terminal_speed_y = terminal_speed_y * delta
