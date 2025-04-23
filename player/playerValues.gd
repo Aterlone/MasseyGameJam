@@ -1,5 +1,8 @@
 extends Sprite2D
 
+# For Reset
+@onready var area_container = get_tree().get_root().get_node("Main/AreaContainer")
+
 # Player values
 ## Water needed for life
 @export var max_health: int = 100
@@ -22,6 +25,11 @@ var hurt_multi: float = 8
 ## Update
 func _process(delta):
 	## Time Survived
+
+	if not current_health:
+		get_tree().reload_current_scene()	
+		area_container.add_child(load("res://main.tscn").instantiate())
+		area_container.get_child(0).queue_free()	
 	score += delta
 	
 	## Hurt
