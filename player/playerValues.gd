@@ -12,7 +12,7 @@ extends Sprite2D
 var extra = 0
 
 ## Day night hurt cycle
-@export var daylight: float = 1
+@export var daylight: float = 0
 const min_max = Vector2(1, 8)
 var hurt_multi: float = 8
 

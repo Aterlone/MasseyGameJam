@@ -5,7 +5,6 @@ var in_house
 var player_on_door = 0
 
 func _process(delta: float) -> void:
-	print(player_on_door)
 	if player_on_door:
 		if Input.is_action_just_pressed("ui_accept"):
 			if in_house:
