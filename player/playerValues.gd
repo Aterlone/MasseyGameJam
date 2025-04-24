@@ -44,7 +44,7 @@ func _process(delta):
 			child.queue_free()
 	
 		await get_tree().process_frame
-		var the_scene = load("res://%s.tscn" % scene)
+		var the_scene = load(scene)
 		area_container.add_child(the_scene.instantiate())
 		
 	score += delta
@@ -69,5 +69,7 @@ func heal(amount) -> void:
 func checkpoint():
 	cp_pos = get_parent().global_position
 	cp_health = current_health
-	scene = area_container.get_child(0).name
+	scene = area_container.get_child(0).get_scene_file_path()
+	
+	print(scene)
 	

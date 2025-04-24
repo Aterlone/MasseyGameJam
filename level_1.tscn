@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://dw0h55b2wmmge"]
+[gd_scene load_steps=10 format=4 uid="uid://bwnkl77idxjup"]
 
 [ext_resource type="PackedScene" uid="uid://dusrftt1q7hkb" path="res://objects/waterdrop.tscn" id="1_3hls8"]
 [ext_resource type="Texture2D" uid="uid://b1e3qjryy32xh" path="res://Misc/cactus.png" id="1_rka8t"]
