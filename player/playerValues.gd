@@ -37,15 +37,7 @@ func _process(delta):
 	## Time Survived
 
 	if not current_health:		
-		# Check point swap vals
-		self.current_health = cp_health
-		get_parent().global_position = cp_pos
-		for child in area_container.get_children():
-			child.queue_free()
-	
-		await get_tree().process_frame
-		var the_scene = load(scene)
-		area_container.add_child(the_scene.instantiate())
+		respawn()
 		
 	score += delta
 	
@@ -73,3 +65,13 @@ func checkpoint():
 	
 	print(scene)
 	
+func respawn():
+	# Check point swap vals
+		self.current_health = cp_health
+		get_parent().global_position = cp_pos
+		for child in area_container.get_children():
+			child.queue_free()
+	
+		await get_tree().process_frame
+		var the_scene = load(scene)
+		area_container.add_child(the_scene.instantiate())
