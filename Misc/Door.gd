@@ -33,6 +33,8 @@ extends Area2D
 var player_on_door = 0
 var player
 
+var other_door
+
 func _ready() -> void:
 	self.name = "Door" + str(door_char)
 
@@ -46,7 +48,6 @@ func _process(delta: float) -> void:
 			else:
 				print("IN HOUSE" + str(player.in_house))
 				scene_change("res://house_1.tscn")
-			
 			player.get_node("Sprite2D").outside = !player.in_house
 
 func _on_body_entered(body):
@@ -67,8 +68,9 @@ func scene_change(scene: String):
 	
 	area_container.add_child(this_scene.instantiate())
 	
-	var other_door = area_container.get_child(1).get_node("Door"+str(door_char))
-	
+	other_door = area_container.get_child(1).get_node("Door"+str(door_char))
+	other_door.get_node("CollisionShape2D").queue_free()
+
 	player.global_position = other_door.global_position
 	player.get_node("Sprite2D").checkpoint()
 	
