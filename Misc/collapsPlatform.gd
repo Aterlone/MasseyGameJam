@@ -10,8 +10,9 @@ func _process(delta):
 	$"../StaticBody2D/Sprite2D".position += Vector2(0, sin(time)*2)
 
 func _on_timer_timeout() -> void:
-	pass # Replace with function body.
-
+	get_node("../StaticBody2D/Sprite2D").visible = false
+	get_node("../StaticBody2D/CollisionShape2D").disabled = true
+	
 
 func _on_area_entered(area: Area2D) -> void:
 	set_process(true)
