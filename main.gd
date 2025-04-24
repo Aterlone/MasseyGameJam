@@ -3,8 +3,8 @@ extends Node2D
 var to_outside = true
 
 func switch_to_next_level(new_door_char):
-	## final cutscene
-	if new_door_char == 5:
+	## final cutscenef
+	if new_door_char == "F":
 		$Player.queue_free()
 		$MainCamera.queue_free()
 		$AreaContainer.queue_free()

@@ -27,8 +27,8 @@ extends Area2D
 	"W",
 	"X",
 	"Y",
-	"Z",
-) var door_char
+	"Z"
+) var door_char : String 
 
 @onready var MAIN = get_tree().get_root().get_child(0)
 
