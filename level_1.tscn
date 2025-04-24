@@ -74,7 +74,7 @@ position = Vector2(485, 262)
 position = Vector2(1447.05, 292)
 collision_mask = 3
 script = ExtResource("2_hbghi")
-door_char = 1
+door_char = "B"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
 position = Vector2(0, -7.25)
@@ -88,7 +88,7 @@ texture = ExtResource("3_ihfcg")
 position = Vector2(901, 268)
 collision_mask = 3
 script = ExtResource("2_hbghi")
-door_char = 0
+door_char = "A"
 
 [node name="Sprite2D" type="Sprite2D" parent="Door2"]
 position = Vector2(0, -0.5)
@@ -96,6 +96,18 @@ texture = ExtResource("3_ihfcg")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Door2"]
 shape = SubResource("RectangleShape2D_ihfcg")
+
+[node name="Door3" parent="." instance=ExtResource("7_j7kpp")]
+position = Vector2(1976, 203)
+door_char = "C"
+
+[node name="Door4" parent="." instance=ExtResource("7_j7kpp")]
+position = Vector2(2428, 74)
+door_char = "D"
+
+[node name="Door5" parent="." instance=ExtResource("7_j7kpp")]
+position = Vector2(3222, -21)
+door_char = "E"
 
 [node name="CollisionTiles2" parent="." instance=ExtResource("3_hn12h")]
 position = Vector2(2, -7)
@@ -133,18 +145,6 @@ z_index = -1
 position = Vector2(3219, -72)
 scale = Vector2(1.39583, 1.38542)
 texture = ExtResource("9_5rr72")
-
-[node name="Door3" parent="." instance=ExtResource("7_j7kpp")]
-position = Vector2(1976, 203)
-door_char = 2
-
-[node name="Door4" parent="." instance=ExtResource("7_j7kpp")]
-position = Vector2(2428, 74)
-door_char = 3
-
-[node name="Door5" parent="." instance=ExtResource("7_j7kpp")]
-position = Vector2(3222, -21)
-door_char = 4
 
 [connection signal="body_entered" from="Door" to="Door" method="_on_body_entered"]
 [connection signal="body_exited" from="Door" to="Door" method="_on_body_exited"]

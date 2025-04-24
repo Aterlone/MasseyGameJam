@@ -3,7 +3,8 @@ extends Node2D
 var to_outside = true
 
 func switch_to_next_level(new_door_char):
-	## final cutscene
+	print("PRINT:" + str(new_door_char))
+	# final cutscene
 	if new_door_char == 5:
 		$Player.queue_free()
 		$MainCamera.queue_free()
@@ -26,6 +27,8 @@ func switch_to_next_level(new_door_char):
 	
 	await get_tree().process_frame
 	
+	await get_tree().process_frame
+	
 	var spawn_door = $AreaContainer.get_child(0).get_node("Door" + str(new_door_char))
 	
 	$Player.global_position = spawn_door.global_position
@@ -36,5 +39,3 @@ func switch_to_next_level(new_door_char):
 	
 	$Player.get_node("Sprite2D").checkpoint()
 	
-	print(str(new_door_char))
-	print(to_outside)

@@ -75,25 +75,27 @@ tile_map_data = PackedByteArray("AAAIAB4AAgABAAEAAAAIAB0AAgABAAEAAAAIABwAAgABAAE
 
 [node name="Door" parent="." instance=ExtResource("4_68721")]
 position = Vector2(315, 281)
-door_char = 0
+door_char = "A"
 
 [node name="Door2" parent="." instance=ExtResource("4_68721")]
 position = Vector2(812, -160)
-
-[node name="Door3" parent="." instance=ExtResource("4_68721")]
-position = Vector2(1285, -6)
-door_char = 3
-
-[node name="Door5" parent="." instance=ExtResource("4_68721")]
-position = Vector2(3225, -17)
-door_char = 4
-
-[node name="Door6" parent="." instance=ExtResource("4_68721")]
-position = Vector2(3224, 66)
-door_char = 5
+door_char = "B"
 
 [node name="Door4" parent="." instance=ExtResource("4_68721")]
 position = Vector2(1288, 240)
+door_char = "C"
+
+[node name="Door3" parent="." instance=ExtResource("4_68721")]
+position = Vector2(1285, -6)
+door_char = "D"
+
+[node name="Door5" parent="." instance=ExtResource("4_68721")]
+position = Vector2(3225, -17)
+door_char = "E"
+
+[node name="Door6" parent="." instance=ExtResource("4_68721")]
+position = Vector2(3224, 66)
+door_char = "F"
 
 [node name="Bottomless Pit" type="Area2D" parent="."]
 z_index = 2
