@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmu5vt65lhfe7"]
+
+[ext_resource type="Script" uid="uid://dsbeyag0wuk5y" path="res://objects/waterBottle.gd" id="1_1aa48"]
+[ext_resource type="Texture2D" uid="uid://dcq12fod8dor2" path="res://objects/water-bottle.png" id="2_0esni"]
+
+[node name="WaterBottle" type="Node2D"]
+script = ExtResource("1_1aa48")
+
+[node name="Water-bottle" type="Sprite2D" parent="."]
+texture = ExtResource("2_0esni")
