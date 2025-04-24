@@ -30,7 +30,7 @@ var scene
 func _ready() -> void:
 	cp_pos = get_parent().global_position
 	cp_health = current_health
-	scene = area_container.get_child(0)
+	scene = area_container.get_child(0).get_scene_file_path()
 
 ## Update
 func _process(delta):
