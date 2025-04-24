@@ -25,5 +25,4 @@ func _on_area_exited(area: Node2D):
 	locked = false
 	cam.get_parent().position = Vector2.ZERO
 	
-	area.get_parent().get_node("Sprite2D").current_health = cp_health
-	area.get_parent().get_node("Sprite2D").get_parent().global_position = cp_pos
+	area.get_parent().get_node("Sprite2D").respawn()

@@ -37,11 +37,7 @@ func _process(delta):
 	## Time Survived
 
 	if not current_health:		
-		# Check point swap vals
-		self.current_health = cp_health
-		get_parent().global_position = cp_pos
-		for child in area_container.get_children():
-			child.queue_free()
+		self.respawn()
 	
 		await get_tree().process_frame
 		var the_scene = load(scene)
@@ -72,4 +68,10 @@ func checkpoint():
 	scene = area_container.get_child(0).get_scene_file_path()
 	
 	print(scene)
-	
+
+func respawn():
+	# Check point swap vals
+		self.current_health = cp_health
+		get_parent().global_position = cp_pos
+		for child in area_container.get_children():
+			child.queue_free()
