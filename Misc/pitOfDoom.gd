@@ -8,6 +8,9 @@ var locked: bool = false
 
 ##Update method
 func _process(delta: float) -> void:
+	if (cam == null):
+		cam = MAIN.get_node("MainCamera")
+	
 	if (locked):
 		print("Locked")
 	
@@ -17,7 +20,6 @@ func _process(delta: float) -> void:
 func _on_area_entered(area: Node2D):
 	print("Entered")
 	locked = true
-	cam = MAIN.get_node("MainCamera")
 
 ##On exiting pit
 func _on_area_exited(area: Node2D):
