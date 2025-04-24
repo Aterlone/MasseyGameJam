@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://bo44onplxbn45"]
+
+[ext_resource type="Script" uid="uid://f2rb7yrh5myc" path="res://Misc/key.gd" id="1_6vrfd"]
+[ext_resource type="Texture2D" uid="uid://brflmtvbd7p6r" path="res://Misc/gateClosed.png" id="1_36alm"]
+[ext_resource type="Texture2D" uid="uid://24wkq0cm8bmo" path="res://Misc/gateOpen.png" id="2_6vrfd"]
+[ext_resource type="Texture2D" uid="uid://ba3et2457sosr" path="res://Misc/key.png" id="3_jyxh1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogxtd"]
+size = Vector2(32, 41)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lgdq7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_36alm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6vrfd")
+}],
+"loop": true,
+"name": &"gate open",
+"speed": 1.0
+}]
+
+[node name="GateKey" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_6vrfd")
+
+[node name="Key" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("3_jyxh1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_ogxtd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D"]
+sprite_frames = SubResource("SpriteFrames_lgdq7")
+animation = &"gate open"
+frame_progress = 0.353577
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
