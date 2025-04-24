@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d2ltot4cgc2nk" path="res://tiles/collision_tiles.tscn" id="4_mu17e"]
 [ext_resource type="Script" uid="uid://dkuma2o8uaqf" path="res://Misc/pitOfDoom.gd" id="5_mu17e"]
 [ext_resource type="PackedScene" uid="uid://ckjlo8mtlnnps" path="res://Misc/collapsPlatform.tscn" id="6_kn2ne"]
-[ext_resource type="Script" uid="uid://b74sabthdht0p" path="res://Misc/waterBottle.gd" id="7_8xm3c"]
+[ext_resource type="Script" path="res://Misc/waterBottle.gd" id="7_8xm3c"]
 [ext_resource type="Texture2D" uid="uid://dcq12fod8dor2" path="res://objects/water-bottle.png" id="8_tem3n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kn2ne"]
