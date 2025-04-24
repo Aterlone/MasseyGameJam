@@ -49,7 +49,8 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	
+	if $'AnimationPlayer'.current_animation == "collapse":
+		return
 	get_controls()
 	movement()
 	
@@ -57,6 +58,7 @@ func _physics_process(delta: float) -> void:
 
 
 func animate():
+	
 	if $AnimationPlayer.current_animation == "climb_up":
 		return
 	
