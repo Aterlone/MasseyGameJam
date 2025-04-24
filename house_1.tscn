@@ -204,6 +204,7 @@ scale = Vector2(3.01, 1)
 
 [node name="Waterbottle" type="Area2D" parent="."]
 position = Vector2(761, -165)
+scale = Vector2(2.5, 2.5)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("7_8xm3c")
@@ -219,6 +220,7 @@ texture = ExtResource("8_tem3n")
 
 [node name="Waterbottle2" type="Area2D" parent="."]
 position = Vector2(1323, -7)
+scale = Vector2(2.5, 2.5)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("7_8xm3c")
