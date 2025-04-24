@@ -4,7 +4,7 @@ var to_outside = true
 
 func switch_to_next_level(new_door_char):
 	## final cutscene
-	if new_door_char == 3:
+	if new_door_char == 5:
 		$Player.queue_free()
 		$MainCamera.queue_free()
 		$AreaContainer.queue_free()

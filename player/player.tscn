@@ -144,7 +144,7 @@ size = Vector2(8, 32)
 size = Vector2(6, 6)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qjkh3"]
-size = Vector2(6, 7.5)
+size = Vector2(5.5, 6.875)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -206,7 +206,7 @@ shape = SubResource("RectangleShape2D_yw30f")
 [node name="SolidCollider" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SolidCollider"]
-position = Vector2(8, 1)
+position = Vector2(7.25, 8.4375)
 shape = SubResource("RectangleShape2D_qjkh3")
 
 [node name="ClimbUpT" type="Timer" parent="."]
