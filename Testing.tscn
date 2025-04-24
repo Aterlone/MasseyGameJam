@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://do5va2lfbac07"]
+[gd_scene load_steps=13 format=3 uid="uid://do5va2lfbac07"]
 
 [ext_resource type="PackedScene" uid="uid://chs0nv8r8ro0j" path="res://player/player.tscn" id="1_axi3y"]
 [ext_resource type="PackedScene" uid="uid://dusrftt1q7hkb" path="res://objects/waterdrop.tscn" id="3_28q7j"]
 [ext_resource type="Script" uid="uid://bk1bf37xv1x5a" path="res://Misc/Door.gd" id="4_1x61k"]
 [ext_resource type="Script" uid="uid://dsbeyag0wuk5y" path="res://Misc/waterBottle.gd" id="4_lj67a"]
+[ext_resource type="Script" uid="uid://dkuma2o8uaqf" path="res://Misc/pitOfDoom.gd" id="5_lj67a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_axi3y"]
 
@@ -15,10 +16,18 @@ radius = 6.08276
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1x61k"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1x61k"]
+size = Vector2(20, 67.8431)
+
+[sub_resource type="Gradient" id="Gradient_lj67a"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lj67a"]
+gradient = SubResource("Gradient_lj67a")
+
 [node name="Testing" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_axi3y")]
-position = Vector2(-1, -67)
+position = Vector2(30, -101)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
@@ -68,4 +77,25 @@ texture_repeat = 2
 scale = Vector2(0.015, 0.015)
 texture = SubResource("NoiseTexture2D_1x61k")
 
+[node name="Bottomless Pit" type="Area2D" parent="."]
+position = Vector2(292, 13)
+scale = Vector2(6.08, 4.08)
+script = ExtResource("5_lj67a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottomless Pit"]
+position = Vector2(0, 23.9216)
+shape = SubResource("RectangleShape2D_1x61k")
+
+[node name="TextureRect" type="TextureRect" parent="Bottomless Pit"]
+offset_left = -10.0
+offset_top = 58.0
+offset_right = 529.0
+offset_bottom = 78.0
+rotation = -1.57042
+scale = Vector2(0.125, 1)
+texture = SubResource("GradientTexture1D_lj67a")
+
 [connection signal="area_entered" from="Waterbottle" to="Waterbottle" method="_on_area_entered"]
+[connection signal="area_entered" from="Bottomless Pit" to="Bottomless Pit" method="_on_area_entered"]
+[connection signal="area_exited" from="Bottomless Pit" to="Bottomless Pit" method="_on_area_exited"]
+[connection signal="body_exited" from="Bottomless Pit" to="Bottomless Pit" method="_on_body_exited"]
