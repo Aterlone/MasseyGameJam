@@ -3,6 +3,14 @@ extends Node2D
 var to_outside = true
 
 func switch_to_next_level(new_door_char):
+	## final cutscene
+	if new_door_char == 3:
+		$Player.queue_free()
+		$MainCamera.queue_free()
+		$AreaContainer.queue_free()
+		add_child(load("res://oasis_scene.tscn").instantiate())
+		return
+	
 	to_outside = !to_outside
 	
 	## insert new level
