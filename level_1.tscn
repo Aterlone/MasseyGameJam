@@ -1,20 +1,13 @@
-[gd_scene load_steps=10 format=4 uid="uid://bwnkl77idxjup"]
+[gd_scene load_steps=7 format=4 uid="uid://bwnkl77idxjup"]
 
 [ext_resource type="PackedScene" uid="uid://dusrftt1q7hkb" path="res://objects/waterdrop.tscn" id="1_3hls8"]
 [ext_resource type="Texture2D" uid="uid://b1e3qjryy32xh" path="res://Misc/cactus.png" id="1_rka8t"]
-[ext_resource type="Script" uid="uid://bk1bf37xv1x5a" path="res://Misc/Door.gd" id="2_hbghi"]
 [ext_resource type="PackedScene" uid="uid://d2ltot4cgc2nk" path="res://tiles/collision_tiles.tscn" id="3_hn12h"]
-[ext_resource type="Texture2D" uid="uid://cq4q10u1w82xu" path="res://objects/door.png" id="3_ihfcg"]
-[ext_resource type="PackedScene" uid="uid://ckjlo8mtlnnps" path="res://Misc/collapsPlatform.tscn" id="5_rka8t"]
+[ext_resource type="PackedScene" uid="uid://d3njlxh4o5xxr" path="res://Misc/door.tscn" id="3_rka8t"]
+[ext_resource type="PackedScene" path="res://Misc/collapsPlatform.tscn" id="5_rka8t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ilcil"]
 size = Vector2(1209, 66)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hn12h"]
-size = Vector2(30, 41.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ihfcg"]
-size = Vector2(30, 41)
 
 [node name="level1" type="Node2D"]
 
@@ -65,74 +58,20 @@ position = Vector2(56, 196)
 [node name="Waterdrop" parent="." instance=ExtResource("1_3hls8")]
 position = Vector2(485, 262)
 
-[node name="Door" type="Area2D" parent="."]
-position = Vector2(1340, 266)
-collision_mask = 3
-script = ExtResource("2_hbghi")
-door_char = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
-position = Vector2(0, -7.25)
-shape = SubResource("RectangleShape2D_hn12h")
-
-[node name="Sprite2D" type="Sprite2D" parent="Door"]
-position = Vector2(0, -7)
-texture = ExtResource("3_ihfcg")
-
-[node name="Door3" type="Area2D" parent="."]
-position = Vector2(1999, 202)
-collision_mask = 3
-script = ExtResource("2_hbghi")
-door_char = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door3"]
-position = Vector2(0, -7.25)
-shape = SubResource("RectangleShape2D_hn12h")
-
-[node name="Sprite2D" type="Sprite2D" parent="Door3"]
-position = Vector2(0, -7)
-texture = ExtResource("3_ihfcg")
-
-[node name="Door4" type="Area2D" parent="."]
-position = Vector2(2353, 44)
-collision_mask = 3
-script = ExtResource("2_hbghi")
-door_char = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door4"]
-position = Vector2(0, -7.25)
-shape = SubResource("RectangleShape2D_hn12h")
-
-[node name="Sprite2D" type="Sprite2D" parent="Door4"]
-position = Vector2(0, -7)
-texture = ExtResource("3_ihfcg")
-
-[node name="Door5" type="Area2D" parent="."]
-position = Vector2(3204, -37)
-collision_mask = 3
-script = ExtResource("2_hbghi")
-door_char = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door5"]
-position = Vector2(0, -7.25)
-shape = SubResource("RectangleShape2D_hn12h")
-
-[node name="Sprite2D" type="Sprite2D" parent="Door5"]
-position = Vector2(0, -7)
-texture = ExtResource("3_ihfcg")
-
-[node name="Door2" type="Area2D" parent="."]
-position = Vector2(901, 268)
-collision_mask = 3
-script = ExtResource("2_hbghi")
+[node name="Door" parent="." instance=ExtResource("3_rka8t")]
+position = Vector2(960, 266)
 door_char = 0
 
-[node name="Sprite2D" type="Sprite2D" parent="Door2"]
-position = Vector2(0, -0.5)
-texture = ExtResource("3_ihfcg")
+[node name="Door2" parent="." instance=ExtResource("3_rka8t")]
+position = Vector2(1293, 277)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Door2"]
-shape = SubResource("RectangleShape2D_ihfcg")
+[node name="Door3" parent="." instance=ExtResource("3_rka8t")]
+position = Vector2(1995, 203)
+door_char = 2
+
+[node name="Door4" parent="." instance=ExtResource("3_rka8t")]
+position = Vector2(2302, 55)
+door_char = 3
 
 [node name="CollisionTiles2" parent="." instance=ExtResource("3_hn12h")]
 position = Vector2(1, 0)
@@ -140,14 +79,3 @@ tile_map_data = PackedByteArray("AAAMABUAAQABAAEAAAAMABQAAQABAAEAAAAMABMAAQABAAE
 
 [node name="CollapsPlatform" parent="." instance=ExtResource("5_rka8t")]
 position = Vector2(444, 312)
-
-[connection signal="body_entered" from="Door" to="Door" method="_on_body_entered"]
-[connection signal="body_exited" from="Door" to="Door" method="_on_body_exited"]
-[connection signal="body_entered" from="Door3" to="Door3" method="_on_body_entered"]
-[connection signal="body_exited" from="Door3" to="Door3" method="_on_body_exited"]
-[connection signal="body_entered" from="Door4" to="Door4" method="_on_body_entered"]
-[connection signal="body_exited" from="Door4" to="Door4" method="_on_body_exited"]
-[connection signal="body_entered" from="Door5" to="Door5" method="_on_body_entered"]
-[connection signal="body_exited" from="Door5" to="Door5" method="_on_body_exited"]
-[connection signal="body_entered" from="Door2" to="Door2" method="_on_body_entered"]
-[connection signal="body_exited" from="Door2" to="Door2" method="_on_body_exited"]
