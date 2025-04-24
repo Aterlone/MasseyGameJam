@@ -26,6 +26,7 @@ func switch_to_next_level(new_door_char):
 	
 	$Player.get_node("Sprite2D").outside = to_outside
 	
+	$Player.get_node("Sprite2D").checkpoint()
 	
 	print(str(new_door_char))
 	print(to_outside)
