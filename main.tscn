@@ -1,12 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://n6u7lr0nc7i6"]
+[gd_scene load_steps=7 format=3 uid="uid://n6u7lr0nc7i6"]
 
 [ext_resource type="PackedScene" uid="uid://bwnkl77idxjup" path="res://level_1.tscn" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://chs0nv8r8ro0j" path="res://player/player.tscn" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://c53cjewed3bfr" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://fdatdf51khw2" path="res://player/main_camera.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dy1tufsxdobps" path="res://UI/HUD.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://cpehuldwhduup" path="res://Misc/thought_bubble.tscn" id="6_7mycd"]
 
 [node name="Main" type="Node2D"]
+texture_filter = 1
+texture_repeat = 2
 script = ExtResource("1_lquwl")
 
 [node name="AreaContainer" type="Node2D" parent="."]
@@ -14,9 +17,12 @@ script = ExtResource("1_lquwl")
 [node name="level1" parent="AreaContainer" instance=ExtResource("1_h2yge")]
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
-position = Vector2(231, 274)
+position = Vector2(202, 265)
 
 [node name="MainCamera" parent="." instance=ExtResource("3_h2yge")]
 position = Vector2(-1, 174)
 
 [node name="HUD" parent="." instance=ExtResource("4_1bvp3")]
+
+[node name="ThoughtBubble" parent="." instance=ExtResource("6_7mycd")]
+position = Vector2(227, 227)
