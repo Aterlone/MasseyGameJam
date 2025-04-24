@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://blxghtt6wglwq" path="res://backgroundwall.png" id="1_mu17e"]
 [ext_resource type="PackedScene" uid="uid://dusrftt1q7hkb" path="res://objects/waterdrop.tscn" id="3_68721"]
-[ext_resource type="PackedScene" path="res://Misc/door.tscn" id="4_68721"]
+[ext_resource type="PackedScene" uid="uid://d3njlxh4o5xxr" path="res://Misc/door.tscn" id="4_68721"]
 [ext_resource type="PackedScene" uid="uid://d2ltot4cgc2nk" path="res://tiles/collision_tiles.tscn" id="4_mu17e"]
 
 [node name="house_1" type="Node2D"]
