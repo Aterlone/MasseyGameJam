@@ -13,10 +13,11 @@ var locked: bool = false
 
 ##On entering pit
 func _on_area_entered(area: Node2D):
-	print("Entered")
+	
 	#cam.unlocked = false
+	area.get_parent().get_node("Sprite2D").respawn()
 
 ##On exiting pit
-func _on_area_exited(area: Node2D):
+#func _on_area_exited(area: Node2D):
 	#cam.unlocked = true
-	area.get_parent().get_node("Sprite2D").respawn()
+	
