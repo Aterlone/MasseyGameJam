@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhha3rlvra3t6"
-path="res://.godot/imported/gate.png-670696bd226dddd04b7d3aad78bbbf11.ctex"
+uid="uid://d3xwk4t2xch6p"
+path="res://.godot/imported/water-bottle.png-bf919e8bed9254d7e59eaad801e41ae8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Misc/gate.png"
-dest_files=["res://.godot/imported/gate.png-670696bd226dddd04b7d3aad78bbbf11.ctex"]
+source_file="res://objects/water-bottle.png"
+dest_files=["res://.godot/imported/water-bottle.png-bf919e8bed9254d7e59eaad801e41ae8.ctex"]
 
 [params]
 
