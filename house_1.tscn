@@ -7,9 +7,10 @@
 [ext_resource type="Script" uid="uid://dkuma2o8uaqf" path="res://Misc/pitOfDoom.gd" id="5_mu17e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kn2ne"]
-size = Vector2(20, 63.2353)
+size = Vector2(15.7566, 73.4979)
 
 [sub_resource type="Gradient" id="Gradient_lj67a"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.333333)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_o4k3h"]
 gradient = SubResource("Gradient_lj67a")
@@ -60,22 +61,35 @@ door_char = 3
 position = Vector2(1276, -5)
 
 [node name="Bottomless Pit" type="Area2D" parent="."]
+z_index = 2
 position = Vector2(1549, 300)
 scale = Vector2(6.08, 4.08)
 script = ExtResource("5_mu17e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bottomless Pit"]
-position = Vector2(0, 26.2255)
+z_index = 2
+position = Vector2(-2.12169, 22.2015)
+scale = Vector2(1, 0.784216)
 shape = SubResource("RectangleShape2D_kn2ne")
 
 [node name="TextureRect" type="TextureRect" parent="Bottomless Pit"]
-offset_left = -10.0
-offset_top = 58.0
-offset_right = 529.0
-offset_bottom = 78.0
+z_index = 2
+offset_left = -9.86841
+offset_top = 45.8333
+offset_right = 529.132
+offset_bottom = 65.8333
 rotation = -1.57042
-scale = Vector2(0.125, 1)
+scale = Vector2(0.105245, 0.784216)
 texture = SubResource("GradientTexture1D_o4k3h")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Bottomless Pit"]
+z_index = 2
+offset_left = -10.0
+offset_top = 45.0
+offset_right = 6.0
+offset_bottom = 56.0
+color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [connection signal="area_entered" from="Bottomless Pit" to="Bottomless Pit" method="_on_area_entered"]
