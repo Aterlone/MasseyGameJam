@@ -38,6 +38,7 @@ texture_progress = ExtResource("3_f2wx0")
 script = ExtResource("6_2ptjp")
 
 [node name="Label" type="Label" parent="Control"]
+visible = false
 layout_mode = 0
 offset_left = 84.0
 offset_top = 8.0

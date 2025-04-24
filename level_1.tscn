@@ -56,9 +56,6 @@ position = Vector2(1601, 892)
 position = Vector2(528, 328)
 shape = SubResource("RectangleShape2D_ilcil")
 
-[node name="CollisionTiles" parent="." instance=ExtResource("1_3hls8")]
-position = Vector2(129, 53)
-
 [node name="Waterdrop" parent="." instance=ExtResource("1_3hls8")]
 position = Vector2(485, 262)
 
