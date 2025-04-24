@@ -62,18 +62,18 @@ position = Vector2(-1, 0.5)
 texture = ExtResource("4_68721")
 
 [node name="Door4" type="Area2D" parent="."]
-position = Vector2(1333, 134)
+position = Vector2(1335, 138)
 collision_mask = 3
 script = ExtResource("3_l6kfo")
 door_char = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door4"]
-position = Vector2(-1, 0.5)
-shape = SubResource("RectangleShape2D_mu17e")
-
 [node name="Sprite2D" type="Sprite2D" parent="Door4"]
 position = Vector2(-1, 0.5)
 texture = ExtResource("4_68721")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door4"]
+position = Vector2(-1, 0.5)
+shape = SubResource("RectangleShape2D_mu17e")
 
 [node name="Door5" type="Area2D" parent="."]
 position = Vector2(1266, -12)

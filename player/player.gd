@@ -20,7 +20,7 @@ var jumps = 0 # number of times jumped
 var impulse = Vector2.ZERO # used to apply a force alongside velocity such as wall jump
 
 @export var GRAVITY = 300
-@export var jump_height = -8000
+@export var jump_height = -10000
 var gravity_jump_quotient = 0.75 # how much gravity is lessened by when jumping
 
 @export var run_speed_max = 10000
@@ -200,7 +200,7 @@ func movement():
 		if empty and solid:
 			global_position = $SolidCollider.global_position
 			global_position.y -= 22
-			global_position.x += joy_x * 2
+			global_position.x += sign($EmptyCollider.scale.x) * 4
 			velocity.y = 0
 			$AnimationPlayer.play("climb_up")
 	
