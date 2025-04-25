@@ -16,7 +16,7 @@ var extra = 0
 
 ## Day night hurt cycle
 var daylight: float = 0
-const min_max = Vector2(1.15,10)
+const min_max = Vector2(1.75,8.5)
 var hurt_multi: float
 
 ## Inside/Outside
@@ -38,6 +38,9 @@ func _process(delta):
 
 	if not current_health:
 		respawn()
+		
+	if current_health > 100:
+		current_health = 100
 	
 	score += delta
 	

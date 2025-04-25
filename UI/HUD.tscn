@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ce5cyh0yso54h" path="res://UI/ThirstBarUnder.png" id="1_4n7mi"]
 [ext_resource type="Script" uid="uid://cvb1w2x77dx0p" path="res://UI/hud.gd" id="1_gppie"]
-[ext_resource type="Texture2D" uid="uid://whfbp2t2jqr6" path="res://UI/sun.png" id="1_uk570"]
+[ext_resource type="Texture2D" uid="uid://byrbstmnsejcj" path="res://objects/waterdrop.png" id="2_md4fy"]
 [ext_resource type="Texture2D" uid="uid://cq5yhgedln5rq" path="res://UI/ThirstBarCover.png" id="2_uk570"]
 [ext_resource type="Texture2D" uid="uid://d3120nlk2aiw4" path="res://UI/ThirstBarValue.png" id="3_f2wx0"]
 [ext_resource type="Script" uid="uid://d1w1umpu0bm8d" path="res://UI/texture_progress_bar.gd" id="6_2ptjp"]
@@ -17,13 +17,16 @@ script = ExtResource("1_gppie")
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
+offset_left = 0.5
+offset_right = 40.5
 offset_bottom = 40.0
 
 [node name="Sun" type="Sprite2D" parent="Control"]
+z_index = 1
 texture_filter = 1
-position = Vector2(16, 16)
-texture = ExtResource("1_uk570")
+position = Vector2(16.5, 16.5)
+scale = Vector2(1.394, 1.298)
+texture = ExtResource("2_md4fy")
 
 [node name="ThirstBar" type="TextureProgressBar" parent="Control"]
 texture_filter = 1
