@@ -32,43 +32,130 @@ region_enabled = true
 region_rect = Rect2(0, 0, 8192, 1024)
 
 [node name="Waterdrop" parent="." instance=ExtResource("3_68721")]
-position = Vector2(485, 262)
+position = Vector2(489, 272)
+
+[node name="Waterdrop26" parent="." instance=ExtResource("3_68721")]
+position = Vector2(836, 195)
+
+[node name="Waterdrop27" parent="." instance=ExtResource("3_68721")]
+position = Vector2(836, 195)
+
+[node name="Waterdrop28" parent="." instance=ExtResource("3_68721")]
+position = Vector2(836, 195)
 
 [node name="Waterdrop2" parent="." instance=ExtResource("3_68721")]
-position = Vector2(505, 78)
+position = Vector2(441, 80)
+
+[node name="Waterdrop44" parent="." instance=ExtResource("3_68721")]
+position = Vector2(235, 15)
+
+[node name="Waterdrop4" parent="." instance=ExtResource("3_68721")]
+position = Vector2(735, 84)
 
 [node name="Waterdrop13" parent="." instance=ExtResource("3_68721")]
 position = Vector2(490, -70)
 
 [node name="Waterdrop3" parent="." instance=ExtResource("3_68721")]
-position = Vector2(1627, 244)
+position = Vector2(1537, 239)
 
-[node name="Waterdrop4" parent="." instance=ExtResource("3_68721")]
-position = Vector2(2245, 115)
+[node name="Waterdrop25" parent="." instance=ExtResource("3_68721")]
+position = Vector2(2024, 241)
 
 [node name="Waterdrop5" parent="." instance=ExtResource("3_68721")]
-position = Vector2(1848, 49)
-
-[node name="Waterdrop7" parent="." instance=ExtResource("3_68721")]
-position = Vector2(3358, -31)
-
-[node name="Waterdrop8" parent="." instance=ExtResource("3_68721")]
-position = Vector2(3519, -27)
+position = Vector2(1922, 85)
 
 [node name="Waterdrop9" parent="." instance=ExtResource("3_68721")]
-position = Vector2(3865, 70)
+position = Vector2(3876, 82)
+
+[node name="Waterdrop39" parent="." instance=ExtResource("3_68721")]
+position = Vector2(3862, 82)
+
+[node name="Waterdrop43" parent="." instance=ExtResource("3_68721")]
+position = Vector2(3605, -20)
+
+[node name="Waterdrop40" parent="." instance=ExtResource("3_68721")]
+position = Vector2(3876, 68)
+
+[node name="Waterdrop14" parent="." instance=ExtResource("3_68721")]
+position = Vector2(3860, 171)
+
+[node name="Waterdrop15" parent="." instance=ExtResource("3_68721")]
+position = Vector2(3873, 156)
 
 [node name="Waterdrop10" parent="." instance=ExtResource("3_68721")]
-position = Vector2(3839, 72)
+position = Vector2(3873, 171)
+
+[node name="Waterdrop33" parent="." instance=ExtResource("3_68721")]
+position = Vector2(3833, 156)
+
+[node name="Waterdrop34" parent="." instance=ExtResource("3_68721")]
+position = Vector2(3833, 171)
 
 [node name="Waterdrop11" parent="." instance=ExtResource("3_68721")]
-position = Vector2(3403, 265)
+position = Vector2(3860, 156)
+
+[node name="Waterdrop31" parent="." instance=ExtResource("3_68721")]
+position = Vector2(3847, 156)
+
+[node name="Waterdrop32" parent="." instance=ExtResource("3_68721")]
+position = Vector2(3847, 171)
+
+[node name="Waterdrop17" parent="." instance=ExtResource("3_68721")]
+position = Vector2(3130, 196)
+
+[node name="Waterdrop18" parent="." instance=ExtResource("3_68721")]
+position = Vector2(3130, 196)
+
+[node name="Waterdrop35" parent="." instance=ExtResource("3_68721")]
+position = Vector2(3334, 101)
+
+[node name="Waterdrop36" parent="." instance=ExtResource("3_68721")]
+position = Vector2(3301, 146)
+
+[node name="Waterdrop37" parent="." instance=ExtResource("3_68721")]
+position = Vector2(3301, 146)
+
+[node name="Waterdrop38" parent="." instance=ExtResource("3_68721")]
+position = Vector2(3334, 262)
+
+[node name="Waterdrop19" parent="." instance=ExtResource("3_68721")]
+position = Vector2(3074, 17)
+
+[node name="Waterdrop45" parent="." instance=ExtResource("3_68721")]
+position = Vector2(3060, 17)
+
+[node name="Waterdrop29" parent="." instance=ExtResource("3_68721")]
+position = Vector2(2931, 102)
+
+[node name="Waterdrop30" parent="." instance=ExtResource("3_68721")]
+position = Vector2(2916, 102)
+
+[node name="Waterdrop46" parent="." instance=ExtResource("3_68721")]
+position = Vector2(2891, -15)
+
+[node name="Waterdrop47" parent="." instance=ExtResource("3_68721")]
+position = Vector2(2847, 54)
 
 [node name="Waterdrop12" parent="." instance=ExtResource("3_68721")]
-position = Vector2(3457, 401)
+position = Vector2(3459, 416)
+
+[node name="Waterdrop42" parent="." instance=ExtResource("3_68721")]
+position = Vector2(3459, 400)
+
+[node name="Waterdrop16" parent="." instance=ExtResource("3_68721")]
+position = Vector2(3878, 417)
+
+[node name="Waterdrop41" parent="." instance=ExtResource("3_68721")]
+position = Vector2(3864, 417)
 
 [node name="Waterdrop6" parent="." instance=ExtResource("3_68721")]
-position = Vector2(1514, 0)
+position = Vector2(1416, -22)
+
+[node name="Waterdrop7" parent="." instance=ExtResource("3_68721")]
+position = Vector2(1635, -3)
+
+[node name="Waterdrop8" parent="." instance=ExtResource("3_68721")]
+position = Vector2(2107, 87)
 
 [node name="CollisionTiles" parent="." instance=ExtResource("4_mu17e")]
 z_index = 5
@@ -222,7 +309,7 @@ scale = Vector2(0.655, 0.655)
 texture = ExtResource("8_tem3n")
 
 [node name="Waterbottle2" type="Area2D" parent="."]
-position = Vector2(1322, -35)
+position = Vector2(1300, -64)
 scale = Vector2(2.5, 2.5)
 collision_layer = 0
 collision_mask = 2
@@ -237,6 +324,22 @@ texture_repeat = 2
 scale = Vector2(0.655, 0.655)
 texture = ExtResource("8_tem3n")
 
+[node name="Waterbottle3" type="Area2D" parent="."]
+position = Vector2(2675, 41)
+scale = Vector2(2.5, 2.5)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("7_8xm3c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Waterbottle3"]
+shape = SubResource("CircleShape2D_n837q")
+
+[node name="Sprite2D" type="Sprite2D" parent="Waterbottle3"]
+texture_filter = 1
+texture_repeat = 2
+scale = Vector2(0.655, 0.655)
+texture = ExtResource("8_tem3n")
+
 [connection signal="area_entered" from="Bottomless Pit" to="Bottomless Pit" method="_on_area_entered"]
 [connection signal="area_exited" from="Bottomless Pit" to="Bottomless Pit" method="_on_area_exited"]
 [connection signal="body_exited" from="Bottomless Pit" to="Bottomless Pit" method="_on_body_exited"]
@@ -245,3 +348,4 @@ texture = ExtResource("8_tem3n")
 [connection signal="body_exited" from="Bottomless Pit2" to="Bottomless Pit2" method="_on_body_exited"]
 [connection signal="body_entered" from="Waterbottle" to="Waterbottle" method="_on_body_entered"]
 [connection signal="body_entered" from="Waterbottle2" to="Waterbottle2" method="_on_body_entered"]
+[connection signal="body_entered" from="Waterbottle3" to="Waterbottle3" method="_on_body_entered"]
