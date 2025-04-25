@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=4 uid="uid://bciskilvqtywy"]
 
 [ext_resource type="Texture2D" uid="uid://3jyfrj5egkgk" path="res://backgroundoasis.png" id="1_gnsbf"]
-[ext_resource type="Script" uid="uid://b3fpskonolrvn" path="res://oasis_scene.gd" id="1_hpq5e"]
+[ext_resource type="Script" path="res://oasis_scene.gd" id="1_hpq5e"]
 [ext_resource type="Texture2D" uid="uid://rjn2oji30t00" path="res://player/oasis.png" id="2_buirc"]
 [ext_resource type="PackedScene" uid="uid://d2ltot4cgc2nk" path="res://tiles/collision_tiles.tscn" id="3_5fi0b"]
 [ext_resource type="Texture2D" uid="uid://cq4q10u1w82xu" path="res://objects/door.png" id="3_buirc"]
@@ -365,9 +365,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 488.0
+offset_left = 473.0
 offset_top = -272.0
-offset_right = 808.0
+offset_right = 793.0
 offset_bottom = -88.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -385,9 +385,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 488.0
+offset_left = 470.0
 offset_top = -272.0
-offset_right = 808.0
+offset_right = 790.0
 offset_bottom = -88.0
 grow_horizontal = 2
 grow_vertical = 2
