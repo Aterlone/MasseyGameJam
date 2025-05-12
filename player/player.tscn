@@ -127,6 +127,22 @@ tracks/0/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_yw30f"]
+resource_name = "collapse"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [8, 9, 10]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n7ghd"]
 _data = {
 &"RESET": SubResource("Animation_1jxqw"),
@@ -162,6 +178,7 @@ texture_repeat = 2
 texture = ExtResource("2_hqtel")
 hframes = 3
 vframes = 4
+frame = 1
 script = ExtResource("3_sweqy")
 
 [node name="FlagPoleDelayT" type="Timer" parent="."]

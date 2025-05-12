@@ -21,3 +21,4 @@ func _on_area_entered(area: Node2D):
 #func _on_area_exited(area: Node2D):
 	#cam.unlocked = true
 	
+

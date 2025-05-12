@@ -23,8 +23,8 @@ var hurt_multi: float
 @export var outside: bool = true;
 
 ## Checkpoint Values
-var cp_pos: Vector2
-var cp_health: int
+@export var cp_pos: Vector2
+@export var cp_health: int
 var scene
 
 func _ready() -> void:
