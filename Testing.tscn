@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://chs0nv8r8ro0j" path="res://player/player.tscn" id="1_axi3y"]
 [ext_resource type="PackedScene" uid="uid://dusrftt1q7hkb" path="res://objects/waterdrop.tscn" id="3_28q7j"]
 [ext_resource type="Script" uid="uid://bk1bf37xv1x5a" path="res://Misc/Door.gd" id="4_1x61k"]
-[ext_resource type="Script" uid="uid://dsbeyag0wuk5y" path="res://Misc/waterBottle.gd" id="4_lj67a"]
+[ext_resource type="Script" uid="uid://b74sabthdht0p" path="res://Misc/waterBottle.gd" id="4_lj67a"]
 [ext_resource type="Script" uid="uid://dkuma2o8uaqf" path="res://Misc/pitOfDoom.gd" id="5_lj67a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_axi3y"]

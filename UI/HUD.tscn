@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://dy1tufsxdobps"]
+[gd_scene load_steps=9 format=3 uid="uid://dy1tufsxdobps"]
 
 [ext_resource type="Texture2D" uid="uid://ce5cyh0yso54h" path="res://UI/ThirstBarUnder.png" id="1_4n7mi"]
 [ext_resource type="Script" uid="uid://cvb1w2x77dx0p" path="res://UI/hud.gd" id="1_gppie"]
-[ext_resource type="Texture2D" uid="uid://whfbp2t2jqr6" path="res://UI/sun.png" id="1_uk570"]
+[ext_resource type="Texture2D" uid="uid://byrbstmnsejcj" path="res://objects/waterdrop.png" id="2_md4fy"]
 [ext_resource type="Texture2D" uid="uid://cq5yhgedln5rq" path="res://UI/ThirstBarCover.png" id="2_uk570"]
 [ext_resource type="Texture2D" uid="uid://d3120nlk2aiw4" path="res://UI/ThirstBarValue.png" id="3_f2wx0"]
 [ext_resource type="Script" uid="uid://d1w1umpu0bm8d" path="res://UI/texture_progress_bar.gd" id="6_2ptjp"]
 [ext_resource type="Script" uid="uid://b8mb041mxxy8v" path="res://Misc/giveUp.gd" id="7_2ptjp"]
+[ext_resource type="Texture2D" uid="uid://8y5omy4yorgx" path="res://UI/giveUp.png" id="7_md4fy"]
 
 [node name="HUD" type="CanvasLayer"]
 scale = Vector2(2, 2)
@@ -16,13 +17,16 @@ script = ExtResource("1_gppie")
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
+offset_left = 0.5
+offset_right = 40.5
 offset_bottom = 40.0
 
 [node name="Sun" type="Sprite2D" parent="Control"]
+z_index = 1
 texture_filter = 1
-position = Vector2(16, 16)
-texture = ExtResource("1_uk570")
+position = Vector2(16.5, 16.5)
+scale = Vector2(1.394, 1.298)
+texture = ExtResource("2_md4fy")
 
 [node name="ThirstBar" type="TextureProgressBar" parent="Control"]
 texture_filter = 1
@@ -37,6 +41,7 @@ texture_progress = ExtResource("3_f2wx0")
 script = ExtResource("6_2ptjp")
 
 [node name="Label" type="Label" parent="Control"]
+visible = false
 layout_mode = 0
 offset_left = 84.0
 offset_top = 8.0
@@ -46,12 +51,13 @@ scale = Vector2(0.5, 0.5)
 text = "100"
 
 [node name="Button" type="Button" parent="."]
-offset_left = 246.5
-offset_top = 11.5
-offset_right = 314.5
-offset_bottom = 42.5
-scale = Vector2(0.948823, 1.08197)
-text = "Give Up"
+offset_left = 285.0
+offset_top = 4.0
+offset_right = 325.0
+offset_bottom = 44.0
+scale = Vector2(0.8, 0.8)
+icon = ExtResource("7_md4fy")
+flat = true
 script = ExtResource("7_2ptjp")
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

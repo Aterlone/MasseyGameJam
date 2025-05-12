@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://dcq12fod8dor2"
-path="res://.godot/imported/water-bottle.png-bf919e8bed9254d7e59eaad801e41ae8.ctex"
+uid="uid://8ut1fhfifkw5"
+path="res://.godot/imported/think bubble.png-4185b07ee8be74db6a1a9c6ad8bce068.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objects/water-bottle.png"
-dest_files=["res://.godot/imported/water-bottle.png-bf919e8bed9254d7e59eaad801e41ae8.ctex"]
+source_file="res://Misc/think bubble.png"
+dest_files=["res://.godot/imported/think bubble.png-4185b07ee8be74db6a1a9c6ad8bce068.ctex"]
 
 [params]
 

@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://dcq12fod8dor2"
-path="res://.godot/imported/water-bottle.png-bf919e8bed9254d7e59eaad801e41ae8.ctex"
+uid="uid://ce50xdc44glt5"
+path="res://.godot/imported/background-4.png-5045b9bfebdeb01633982bfc02d955fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objects/water-bottle.png"
-dest_files=["res://.godot/imported/water-bottle.png-bf919e8bed9254d7e59eaad801e41ae8.ctex"]
+source_file="res://backgrounds/background-4.png"
+dest_files=["res://.godot/imported/background-4.png-5045b9bfebdeb01633982bfc02d955fa.ctex"]
 
 [params]
 

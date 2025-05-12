@@ -16,8 +16,8 @@ var extra = 0
 
 ## Day night hurt cycle
 var daylight: float = 0
-const min_max = Vector2(1, 8)
-var hurt_multi: float = 8
+const min_max = Vector2(1.75,8.5)
+var hurt_multi: float
 
 ## Inside/Outside
 @export var outside: bool = true;
@@ -30,19 +30,18 @@ var scene
 func _ready() -> void:
 	cp_pos = get_parent().global_position
 	cp_health = current_health
-	scene = area_container.get_child(0)
+	scene = area_container.get_child(0).get_scene_file_path()
 
 ## Update
 func _process(delta):
 	## Time Survived
 
-	if not current_health:		
-		self.respawn()
-	
-		await get_tree().process_frame
-		var the_scene = load(scene)
-		area_container.add_child(the_scene.instantiate())
+	if not current_health:
+		respawn()
 		
+	if current_health > 100:
+		current_health = 100
+	
 	score += delta
 	
 	## Hurt
@@ -68,10 +67,14 @@ func checkpoint():
 	scene = area_container.get_child(0).get_scene_file_path()
 	
 	print(scene)
-
+	
 func respawn():
 	# Check point swap vals
-		self.current_health = cp_health
-		get_parent().global_position = cp_pos
-		for child in area_container.get_children():
-			child.queue_free()
+	self.current_health = cp_health
+	get_parent().global_position = cp_pos
+	for child in area_container.get_children():
+		child.queue_free()
+	
+	await get_tree().process_frame
+	var the_scene = load(scene)
+	area_container.add_child(the_scene.instantiate())

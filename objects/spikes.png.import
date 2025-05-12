@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://dcq12fod8dor2"
-path="res://.godot/imported/water-bottle.png-bf919e8bed9254d7e59eaad801e41ae8.ctex"
+uid="uid://rt8vcbn575ao"
+path="res://.godot/imported/spikes.png-1230e7a20c0d3de26778dfbbb3861f81.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objects/water-bottle.png"
-dest_files=["res://.godot/imported/water-bottle.png-bf919e8bed9254d7e59eaad801e41ae8.ctex"]
+source_file="res://objects/spikes.png"
+dest_files=["res://.godot/imported/spikes.png-1230e7a20c0d3de26778dfbbb3861f81.ctex"]
 
 [params]
 

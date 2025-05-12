@@ -27,8 +27,8 @@ extends Area2D
 	"W",
 	"X",
 	"Y",
-	"Z",
-) var door_char
+	"Z"
+) var door_char : String 
 
 @onready var MAIN = get_tree().get_root().get_child(0)
 
@@ -41,6 +41,7 @@ func _ready() -> void:
 	self.name = "Door" + str(door_char)
 
 func _physics_process(delta: float) -> void:
+	$Space.visible = player_on_door
 	if player_on_door:
 		if Input.is_action_just_pressed("ui_accept"):
 			

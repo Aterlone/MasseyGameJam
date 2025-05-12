@@ -2,7 +2,22 @@ extends Node2D
 
 var to_outside = true
 
+#
+func _ready() -> void:
+	var size = Vector2i(640 * 3, 360 * 3)
+	get_window().size = size
+	get_window().move_to_center()
+
+
 func switch_to_next_level(new_door_char):
+	## final cutscenef
+	if new_door_char == "F":
+		$Player.queue_free()
+		$MainCamera.queue_free()
+		$AreaContainer.queue_free()
+		add_child(load("res://oasis_scene.tscn").instantiate())
+		return
+	
 	to_outside = !to_outside
 	
 	## insert new level
